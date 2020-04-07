@@ -24,12 +24,14 @@ public class RotationMatrix {
             }
 
             for(int i = 0; i < floor; ++i) {        //旋转操作
-                cir = N + i;
-                /* 上面这步可分解为：
+                cir = N + i - 1;                        //最核心的一步：得到该层的最大下标
+                /* 上面一步可分解为：
                     cir = N;
                     cir += i;
+                    cir -= 1;
                 */
-                for(int j = i; j < cir - 1; ++j) {     //cir-1-j为当前层内需要旋转的组数
+                for(int j = i; j < cir; ++j) {     //在该层进行旋转的时候取不到最大下标处，cir-j为当前层内需要旋转的组数
+                    //四个方位进行旋转交换，需要用到两个中间变量temp1，temp2
                     int temp1 = matrix[j][n - i];
                     matrix[j][n - i] = matrix[i][j];
                     int temp2 = matrix[n - i][n - j];
@@ -38,7 +40,7 @@ public class RotationMatrix {
                     matrix[n - j][i] = temp2;
                     matrix[i][j] = temp1;
                 }
-                N -= 2;
+                N -= 2;     //进入下一层，下一层的长度比上一层小2
             }
         }
     }
