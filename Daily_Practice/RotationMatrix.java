@@ -5,7 +5,7 @@
 
 public class RotationMatrix {
 
-    //int n = cilumn - 1;
+    //int n = N - 1;
     //matrix[i][j]旋转后得位置matrix[j][n - i]
     //本题的解决方式是从外到内一层一层的旋转
 
@@ -24,7 +24,7 @@ public class RotationMatrix {
             }
 
             for(int i = 0; i < floor; ++i) {        //旋转操作
-                cir = N + i - 1;                        //最核心的一步：得到该层的最大下标
+                cir = N + i - 1;                    //最核心的一步：得到该层的最大下标
                 /* 上面一步可分解为：
                     cir = N;
                     cir += i;
