@@ -9,7 +9,6 @@ import java.util.Queue;
  * 因此，本题可采用DFS算法或者BFS算法进行求解
  */
 
-
 public class RobotMoving {
 
     //DFS
