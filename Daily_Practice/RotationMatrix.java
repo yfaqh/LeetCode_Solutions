@@ -7,7 +7,7 @@ public class RotationMatrix {
 
     //int n = N - 1;
     //matrix[i][j]旋转后得位置matrix[j][n - i]
-    //本题的解决方式是从外到内一层一层的旋转
+    //本题的解决方式是从外到内对矩阵进行一层一层的旋转，即对数据进行换位
 
     class Solution {
         public void rotate(int[][] matrix) {
